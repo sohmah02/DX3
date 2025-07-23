@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    max-width: 100vw;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    
+}
+.main-content{
+    flex: 1;
+    width: 100vw;
+}
+.nav {
+    width: 100%;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    background: #f7f3f3;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    flex: 1;                /* Make ul take all available space */
+    justify-content: space-around; /* Evenly spread the links */
+    padding: 0;
+    margin: 0;
+}
+
+.nav a{
+    text-decoration: none;
+    font-size: larger;
+    color: black;
+    margin: 0px 10px;
+}
+.nav a:hover{
+    text-decoration: none;
+    font-size: larger;
+    color: #22097a;
+    background: #c9b1b1;
+    margin: 0px 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid purple;
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+
+}
+.logo{
+width: 100px;
+height: auto;
+object-fit: contain;
+border-radius: 20px;
+}
+
+.intro {
+     display: grid; 
+     grid-template-columns: 1fr 1fr; 
+     align-items: center; 
+     gap: 30px; 
+     margin: 10px;
+     padding: 20px;
+     }
+
+.intro-pic { 
+     width: 300px;
+     height: 500px; 
+     border-radius: 50% / 30%;
+     box-shadow: 10px 10px 30px rgba(0, 0, 0, 1); 
+     margin-top: 40px;
+     }
+
+#intro h1 {
+     color: rgb(57, 173, 250);
+     margin-bottom: 10px;
+     }
+
+#intro p { 
+    font-size: large; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin-bottom: 10px; 
+}
+
+#intro button { width: 7.5rem; 
+    height: 2.5rem; 
+    background: #22097a; 
+    border-radius: 10px; 
+}
+
+#intro button:hover { 
+    width: 8rem; 
+    height: 3rem; 
+    background: #411cc7; 
+    border-radius: 20px; 
+}
+
+#intro a { 
+    text-decoration: none; 
+    font-size: 20px; 
+    color: white; 
+}
+
+ @media (max-width: 768px) { .intro { grid-template-columns: 1fr;  
+    text-align: center;  }
+
+.intro-pic { order: -1;  
+    margin: 0 auto; 
+} }
+
+.body{
+    margin-top: 50px;
+    text-align: center;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+}
+.body h1{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.body p{
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.item{
+    background: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.item:hover{
+    transform: scale(1.05);
+}
+.item img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.item p{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.footer{
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 10px 0; 
+    width:100vw;
+}
+.footer p{
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+
+/* About page */
+.about-logo{
+   margin: 10px 0;
+   padding: 15px;
+   text-align: center;
+   justify-content: center;
+}
+.big-logo{
+width: 20rem;
+height: auto;
+object-fit: contain;
+border-radius: 20px;
+}
+span{
+color: red;
+}
+.product-head {
+    list-style: square;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+.product-head p{
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.price{
+    color: red;
+}
+.prints p{
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;  
+    margin-bottom: 10px;
+}
+.prints {
+    list-style: square;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+.contact-btn{
+    width: 7.5rem;
+height: 2rem;
+background: #077419;
+border-radius: 10px;
+margin-bottom: 10px;
+}
+.contact-btn:hover{
+width: 8rem;
+height: 2.5rem;
+background: #036b23;
+border-radius: 20px;
+margin-bottom: 10px;
+}
+.contact-btn a{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+.links{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+    align-items: center;
+}
+.links a{
+    text-decoration: none;
+    font-size: larger;
+    color: black;
+    margin: 10px;
+}
+.links a i {
+   font-size: 5.0rem;
+}
+.links a p{
+    margin-top: 20px;
+}
