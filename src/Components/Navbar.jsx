@@ -1,17 +1,28 @@
-import React from "react";
-import "../App.css"; 
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../App.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="nav">
-      <div>
-        <img src="/DX-3/logo.jpg" alt="Logo" className="logo" />
+      <img src="/DX-3/logo.jpg" alt="Logo" className="logo" />
+
+      <div
+        className={`hamburger ${menuOpen ? "active" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/product">Product</a></li>
-        <li><a href="/contact">Contact</a></li>
+
+      <ul className={menuOpen ? "open" : ""}>
+        <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+        <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+        <li><Link to="/product" onClick={() => setMenuOpen(false)}>Product</Link></li>
+        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
       </ul>
     </div>
   );

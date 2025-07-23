@@ -24,22 +24,30 @@ body{
     width: 100vw;
 }
 .nav {
+    background-color: #f7f3f3;
     width: 100%;
+    max-width: 100vw;   /* keeps it within screen width */
     min-height: 5rem;
     display: flex;
     align-items: center;
     padding: 0 1rem;
-    background: #f7f3f3;
+    box-sizing: border-box;
+    overflow-x: hidden; /* prevents sideways scroll */
 }
+
+
 
 .nav ul {
     display: flex;
     list-style: none;
-    flex: 1;                /* Make ul take all available space */
-    justify-content: space-around; /* Evenly spread the links */
-    padding: 0;
+    flex: 1;
+    justify-content: space-around;
     margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
 }
+
+
 
 .nav a{
     text-decoration: none;
@@ -59,21 +67,27 @@ body{
    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 
 }
-.logo{
-width: 100px;
-height: auto;
-object-fit: contain;
-border-radius: 20px;
+.logo {
+    width: 60px;       /* smaller base size */
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    max-width: 100%;   /* prevents overflow */
 }
 
+
 .intro {
-     display: grid; 
-     grid-template-columns: 1fr 1fr; 
-     align-items: center; 
-     gap: 30px; 
-     margin: 10px;
-     padding: 20px;
-     }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 100vw;     /* keeps it within viewport */
+    box-sizing: border-box;
+    overflow-x: hidden;   /* no sideways scrolling */
+}
+
 
 .intro-pic { 
      width: 300px;
@@ -94,11 +108,27 @@ border-radius: 20px;
     margin-bottom: 10px; 
 }
 
-#intro button { width: 7.5rem; 
-    height: 2.5rem; 
-    background: #22097a; 
-    border-radius: 10px; 
+#intro button {
+    padding: 0.5rem 1rem;
+    background: #22097a;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;   /* keeps text on one line */
+    display: inline-flex;  /* ensures text stays centered */
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content; /* button always resizes to text */
 }
+
+#intro button a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
 
 #intro button:hover { 
     width: 8rem; 
@@ -120,12 +150,15 @@ border-radius: 20px;
     margin: 0 auto; 
 } }
 
-.body{
-    margin-top: 50px;
+.body {
+    margin-top: 2rem;
     text-align: center;
-    align-items: center;
-    padding: 50px;
+    padding: 2rem 1rem;
     background-color: white;
+    width: 100%;
+    max-width: 100vw;      /* prevents horizontal overflow */
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 .body h1{
     font-size: 24px;
@@ -136,47 +169,55 @@ border-radius: 20px;
     font-size: 16px;
     margin-bottom: 30px;
 }
-.grid-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center; /* centers each grid item */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
-.item{
-    background: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+
+.item {
+  text-align: center;
 }
+
+.item img {
+  width: 100%;
+  max-width: 250px; /* prevents images from being too big */
+  border-radius: 10px;
+}
+
+
+.item p {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
 .item:hover{
     transform: scale(1.05);
 }
-.item img{
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-.item p{
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.footer{
+.footer {
     background-color: #111;
     color: white;
     text-align: center;
-    padding: 10px 0; 
-    width:100vw;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100vw;  /* prevents it from exceeding the viewport width */
+    overflow-x: hidden; /* hides any accidental overflow */
+    box-sizing: border-box;
 }
-.footer p{
-    font-size: 14px;
-    opacity: 0.7;
+
+.footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0.3rem 0;
+    word-wrap: break-word; /* ensures long text doesn't cause overflow */
 }
+
+
 
 
 /* About page */
@@ -192,9 +233,44 @@ height: auto;
 object-fit: contain;
 border-radius: 20px;
 }
-span{
-color: red;
+#preview {
+  max-width: 800px;
+  margin-bottom: 30px;
 }
+
+#preview h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+#preview h3 {
+  margin-top: 30px;
+  font-size: 1.8rem;
+  color: #22097a;
+}
+
+#preview p {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Special styling for Our Story */
+#preview h3 + p {
+  background: #f7f3f3;
+  padding: 15px 20px;
+  border-left: 4px solid #22097a;
+  border-radius: 10px;
+  margin-top: 10px;
+  color: #333;
+}
+
+#preview span {
+  color: red;
+}
+
 .product-head {
     list-style: square;
     font-size: large;
@@ -225,40 +301,135 @@ color: red;
     text-align: center;
     margin-top: 50px;
 }
-.contact-btn{
-    width: 7.5rem;
-height: 2rem;
-background: #077419;
-border-radius: 10px;
-margin-bottom: 10px;
+.contact-page {
+  text-align: center;
+  padding: 50px 20px;
 }
-.contact-btn:hover{
-width: 8rem;
-height: 2.5rem;
-background: #036b23;
-border-radius: 20px;
-margin-bottom: 10px;
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
-.contact-btn a{
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 40px;
 }
-.links{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    text-align: center;
-    align-items: center;
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
 }
-.links a{
-    text-decoration: none;
-    font-size: larger;
-    color: black;
-    margin: 10px;
+
+.links a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+  animation: bounceIn 0.8s ease forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
-.links a i {
-   font-size: 5.0rem;
+
+.links a:nth-child(1) {
+  animation-delay: 0.2s;
 }
-.links a p{
-    margin-top: 20px;
+
+.links a:nth-child(2) {
+  animation-delay: 0.4s;
 }
+
+.links a:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.contact-icon {
+  font-size: 4rem; /* Increased size */
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.links a:hover .contact-icon {
+  transform: rotate(15deg) scale(1.3);
+  filter: drop-shadow(0 0 15px currentColor); /* glow */
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        background: #f7f3f3;
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        width: 220px;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+
+    .nav ul.open {
+        display: flex;
+        transform: translateX(0);
+    }
+}
+
