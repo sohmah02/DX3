@@ -16,8 +16,11 @@ function About() {
       </div>
 
       <div className="body">
+        <div className="about-header">
+  <h2><span>DX-3</span></h2>
+</div>
+
         <div id="preview">
-          <h2>About <span>DX-3</span></h2>
           <p>
             DX-3 is more than just a clothing brand; it's a lifestyle.
             We specialize in designer and custom-made clothing that 
@@ -35,8 +38,8 @@ function About() {
           <p>
             Okoro Esther Adaeze’s journey is stitched with passion, resilience, and vision. 
             A graduate of Accounting from the University of Ilorin, she chose to follow her 
-            creative heartbeat, refining her craft at Qubras Fashion School. From there, DX-3 
-            was born — a brand where innovation meets style, and every design reflects her 
+            creative heartbeat, refining her craft at Qubras Fashion School, and mentorship with De_Ade. From there, DX-3 
+            was born a brand where innovation meets style, and every design reflects her 
             fearless pursuit of self-expression.
           </p>
         </div>
