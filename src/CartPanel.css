@@ -1,0 +1,64 @@
+.cart-icon {
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: transform 0.2s;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Cart Panel Styling */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 320px;
+  background-color: #1a1a1a;
+  color: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.6);
+  transition: right 0.3s ease-in-out;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-panel.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.cart-header h2 {
+  font-size: 1.5rem;
+  color: gold;
+}
+
+.close-cart {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.cart-body {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+}

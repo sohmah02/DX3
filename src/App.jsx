@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Product from "./Pages/Product";
 import Contact from "./Pages/Contact";
-import "./App.css";
+import "./App.css";lets
 
 function App() {
   return (
